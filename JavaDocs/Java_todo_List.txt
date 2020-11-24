@@ -1,0 +1,10 @@
+Todo List : 
+
+ - Array vs List vs ArrayList 
+ - Error Handling
+ - Inner classes
+ - Garbagecollection 
+ 
+ - Packages
+ - Regular Expressions 
+  

@@ -1,0 +1,190 @@
+1) Local Variable:
+   - declared inside the body of the method
+   - only accessible inside method !
+   - not compatible with static 
+
+2) Instance Variable
+   - declared inside the class / outside the body of a method
+   - is NOT declared static
+
+3) Static Variable:
+   - cannot be local
+   - is shared with all instances / Objs of class 
+   - memory alloc. happens only once when class is loaded !	
+
+	class VariableDemo
+	{
+   	static int count=0;
+   	public void increment(){
+       		count++;
+   	}
+  	Output:
+	Obj1: count is=2
+	Obj2: count is=2
+
+4) Data Types:
+  
+   1) Primitive data Types:
+	 		Default Value		Default Size		Info
+	 boolean  	false 			1 bit
+	 char		`\u0000`		2 byte			single 16-bit Unicode character \u0000' (or 0) to '\uffff' (or 65,535 inclusive)
+	 byte		0			1 byte 			8-bit signed two's complement, Range [-128: 127]
+	 short		0			2 byte 			16-bit signed two's complement, Range[-32,768 : 32,767]
+	 int		0			4 byte			32-bit signed two's complement, Range [-2^(31): 2^(31-1)]
+	 long 		0l			8 byte			64-bit signed two's complement, Range [-2^(63): 2^(31-1)]
+	 float		0.0f			4 byte			32-bit IEEE 754 floating Points, use float over double (memory saving), float is not as precise as double
+	 double		0.0d			8 byte			64-bit IEEE 754 floating Points,
+  
+    2) Non-primitive data types:
+	Classes, Interfaces, Arrays, Strings etc..
+
+5) Scope
+    
+   1) Class Scope
+   2) Method Scope
+   4) Loop Scope
+   5) Bracket Scope
+   6) Variable Shadowing 
+
+6) Modifiers 
+
+   Modifier	 Package  Subclass  World
+   
+   public        Yes	  Yes       Yes
+
+   protected     Yes      Yes       No
+
+   Default(none) Yes      No        No
+
+   private       No       No        No
+
+  Block Scope
+
+   int a = 1;
+   {
+     int b = 2;
+     a = a + b;
+   }  
+   // Compile error, cannot be resolved
+   b++    
+
+
+   Variable Shadowing( e.g class vari == method vari )
+
+   public class NestedScopesExample {
+   	String title = "classTitle";
+    	public void printTitle() {
+       		System.out.println(title);
+        	String title = "method title";
+        	System.out.println(title);
+    	}
+   }
+
+   Output: classTitle
+           method title
+   Avoidable with this keyword
+
+6) IF Statement
+
+	if (condition){
+	  // logic 
+	}
+	else if(condition){
+	  // logic
+	}else{
+	  //logic
+	}
+
+  If combined with Ternary Operator	
+   
+   condition ? returnValue2 : returnValue2;
+
+7) Switch Statement:
+
+Works with byte, short, int, long, enum types, String ..
+
+switch(expression){
+
+	case value1:
+	 // logic for value 1
+	 break / return  // optional 
+
+	case value2:
+	 // logic for value 2
+
+	.
+	.
+	.
+	.
+	.
+	.
+
+	default:
+	// default case if no other is matching
+
+8) Loops
+
+  1) For loop
+
+  Use when number of iterations is given 
+  
+  3 types of For loops:
+  
+	1) Simple for loop
+	
+	for(initialisation; condition; incr/dect){
+	   // Statement or code to be executed 
+     	}
+
+	2) For-each loop
+	Used to traverse array or collection 
+
+     	for(type var: array){
+	  // code to be executed 
+        }	
+
+	3) Labeled for loop
+ 	Used for nested loops. useful if you want to break/ continue a specific for loop
+
+	labelname;
+	for(initialisation; condition; incr/ decr){
+            // Statement or code to be executed
+	  for(init ; condition; incr/ decr){
+	   // Statement or code 
+	   break labelname;
+	  }
+        }	
+
+        Inf for loop:
+	  for(;;)
+    
+  2) While loop
+
+  Used when number of iterations is not fixed 
+
+  while(condition){
+   // code to be executed
+  }	
+
+  3) Do-while loop
+ 
+  Used when number of iterations is not fixed and code has to be executed at least once // Guaranteed because condition is checked after loop body 
+
+  do{
+   // code to be executed 
+   }while(condition)
+
+  Inf. do while if condition equals true !
+
+
+9) Break Statement
+
+  - the loops terminate and the program control resumes at the next statement following the loop.
+
+  - only breaks the inner loop if inner and outer loops exists
+
+10) Continue Statement
+
+  - used if the current iteration is not important
+  - jumps immediately to the next iteration 
+ 
