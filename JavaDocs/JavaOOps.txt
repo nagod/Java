@@ -10,12 +10,11 @@ Important concepts:
   4) Polymorphism	: done
   5) Encapsulation 	: done
   6) Abstract Classes	: done 
-  7) Inner Classes 
-  8) Anonym Classes
+  7) Nested Classes     : half done 
 
 Other used therms:
 
-  1) Coupling 
+  1) Coupling 		:
   2) Cohesion
   3) Association 
   4) Aggregation 
@@ -75,4 +74,89 @@ Extends vs Implements
 
  - Class A implements Interface B
  - Class A extends AbstractClass B
+
+Nested classes:
+
+							 Nested classes
+  
+					     
+				 Inner class       				 Static nested classes 
+
+  	
+		  
+	Inner classes 	   Method Local	     Anonymous        
+		           Inner classes     Inner classes 
+
+
+
+
+  Inner Classe:
+  
+  - Inner classes are used as a kind of security mechanism 
+  - Inner class is set Private => can only be accessed from Outerclass 
+
+      class Outer_Demo {
+	// private variable of the outer class
+   	private int num = 175;  
+         
+   	// inner class
+   	public class Inner_Demo {
+              public int getNum() {
+                System.out.println("This is the getnum method of the inner class");
+                return num;
+              }
+        }
+      }
+
+      public class My_class2 {
+
+        public static void main(String args[]) {
+        // Instantiating the outer class
+        Outer_Demo outer = new Outer_Demo();
+      
+        // Instantiating the inner class
+        Outer_Demo.Inner_Demo inner = outer.new Inner_Demo();
+        System.out.println(inner.getNum());
+        }
+     } 
+Output : This is the getnum method of the inner class: 175
+
+
+  Method-local Inner class
+  
+  - Scope of inner class is restricted within the method 
+
+	public class Outerclass {
+   	// instance method of the outer class 
+   	  void my_Method() {
+          int num = 23;
+
+          // method-local inner class
+          class MethodInner_Demo {
+            public void print() {
+              System.out.println("This is method inner class "+num);	   
+            }   
+          } // end of inner class
+	   
+          // Accessing the inner class
+          MethodInner_Demo inner = new MethodInner_Demo();
+          inner.print();
+        }
+   
+       public static void main(String args[]) {
+         Outerclass outer = new Outerclass();
+         outer.my_Method();	   	   
+       } 
+      }
+
+Output:This is method inner class 23
+
+
+Anonymous inner classes :
+
+	https://www.tutorialspoint.com/java/java_innerclasses.htm
+
+
+
+		
 

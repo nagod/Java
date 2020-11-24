@@ -1,10 +1,26 @@
 Todo List : 
 
- - Array vs List vs ArrayList 
- - Error Handling
- - Inner classes
  - Garbagecollection 
- 
- - Packages
+ - Collections 			https://www.tutorialspoint.com/java/java_collections.htm
+ - Genericts			
  - Regular Expressions 
+ - JUnit testing 		https://www.tutorialspoint.com/junit/junit_using_assertion.htm
+ - Java Stacktrace 
+ - Class String 
+ - StringBuffer / StringBuilder
+ - Wrapper classes 
+ - Array, ArrayList 
+ - Threading 
+
+Datastructes : 
+
+set
+queue 
+array
+hash table 
+linked list
+stack 
+
+
+Resource :https://www.tutorialspoint.com/java/java_strings.htm
   
