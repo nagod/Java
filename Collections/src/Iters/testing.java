@@ -4,13 +4,15 @@ import java.util.*;
 public class testing {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		String [] names = new String[]{"Uwe", "Java", "Dieter"};
 
-		Collection<String> set = new TreeSet<String>();
-		Collections.addAll(set, "A","B","C");
-		
-		Iterator<String> it = set.iterator();
-		while(it.hasNext()) System.out.println(it.next());
+		/*
+		 * Following Methods are the same
+	     */
+
+		for(int i = 0; < names.length; i++){
+			System.out.println(names[i])
+		}
 	}
 
 }
