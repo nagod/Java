@@ -1,0 +1,162 @@
+OOPs( Object-Oriented Programming System)
+
+OOP is a methodology or paradigm to design a program using classes and objects.
+
+Important concepts:
+
+  1) Objects		
+  2) Classes		: trivial 
+  3) Inheritance	: done 
+  4) Polymorphism	: done
+  5) Encapsulation 	: done
+  6) Abstract Classes	: done 
+  7) Nested Classes     : half done 
+
+Other used therms:
+
+  1) Coupling 		:
+  2) Cohesion
+  3) Association 
+  4) Aggregation 
+  5) Composition
+
+
+Inheritance :
+
+ - Object A acquires properties and behaviours of parent object.
+ - Provides code reusability and prevents redundancy 
+
+Polymorphism :
+
+ - Lets us use inherited methods in different ways
+ - it is distinguished between static and dynamic polymorphism
+ - Method names doesn't change 
+
+ - static :
+	1) Overloading methods
+	2) methods have are at its core the same behaviour, maybe just other/ more arguments
+	
+	print(String name)  -> print(String name, int age , ... )
+        
+ - dynamic :
+	1) Overriding methods
+	2) Methods are implemented differently and interpreted during runtime 
+
+
+ - both is realised via the "@Overriding/ @Overloading" annotations  
+
+Encapsulation:
+
+ - also known as Data-hiding
+ - Class variables are private and only accessible through given methods e.g Setter/Getter
+
+Interface : 
+
+ - defines a wanted structure / what a class has to do 
+ - starts with keyword : interface <name_of_Interface>
+ - declares constant fields and and methods that are abstract
+ - class IMPLEMENTS an Interface
+ - all fields are automatically public, static, and final, and all methods that you declare or define (as default methods) are public
+
+Abstract Classes :
+
+ - Serve as Superclasses and can NOT be instantiated [ but can be subclassed ] 
+ - Defines certain characteristics and abilities which are defined more in detail in their subclasses 
+  
+ Guidelines:
+
+   1) Class declaration starts with keyword Abstract 
+   2) Behaviour of abstract methods is NOT implemented 
+   3) Keyword abstract {for methods/ Variables etc. } is ONLY allowed in combination with the modifiers : Public and Protected 
+   4) however they can include eg. final variables and implemented methods. ( But without the keyword Abstract ) 
+ 
+Extends vs Implements 
+
+ - Class A implements Interface B
+ - Class A extends AbstractClass B
+
+Nested classes:
+
+							 Nested classes
+  
+					     
+				 Inner class       				 Static nested classes 
+
+  	
+		  
+	Inner classes 	   Method Local	     Anonymous        
+		           Inner classes     Inner classes 
+
+
+
+
+  Inner Classe:
+  
+  - Inner classes are used as a kind of security mechanism 
+  - Inner class is set Private => can only be accessed from Outerclass 
+
+      class Outer_Demo {
+	// private variable of the outer class
+   	private int num = 175;  
+         
+   	// inner class
+   	public class Inner_Demo {
+              public int getNum() {
+                System.out.println("This is the getnum method of the inner class");
+                return num;
+              }
+        }
+      }
+
+      public class My_class2 {
+
+        public static void main(String args[]) {
+        // Instantiating the outer class
+        Outer_Demo outer = new Outer_Demo();
+      
+        // Instantiating the inner class
+        Outer_Demo.Inner_Demo inner = outer.new Inner_Demo();
+        System.out.println(inner.getNum());
+        }
+     } 
+Output : This is the getnum method of the inner class: 175
+
+
+  Method-local Inner class
+  
+  - Scope of inner class is restricted within the method 
+
+	public class Outerclass {
+   	// instance method of the outer class 
+   	  void my_Method() {
+          int num = 23;
+
+          // method-local inner class
+          class MethodInner_Demo {
+            public void print() {
+              System.out.println("This is method inner class "+num);	   
+            }   
+          } // end of inner class
+	   
+          // Accessing the inner class
+          MethodInner_Demo inner = new MethodInner_Demo();
+          inner.print();
+        }
+   
+       public static void main(String args[]) {
+         Outerclass outer = new Outerclass();
+         outer.my_Method();	   	   
+       } 
+      }
+
+Output:This is method inner class 23
+
+
+Anonymous inner classes :
+
+	https://www.tutorialspoint.com/java/java_innerclasses.htm
+
+
+
+		
+

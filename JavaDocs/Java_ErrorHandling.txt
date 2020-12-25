@@ -1,0 +1,150 @@
+Resource : https://www.tutorialspoint.com/java/java_exceptions.htm
+
+
+Basics 
+
+Definition:
+
+	An exception is an event, which occurs during the execution of an program, that disrupts the normal flow of the programs instructions.
+
+Examples :
+
+	1) Entering invalid Data  
+	2) File that needs to be opened is not found 
+	3) Network connection has been lost during data exchange 
+
+
+
+	  	      ----> Throwable <--- 
+	              |    (checked)     |
+	              |                  |
+	              |                  |
+	      ---> Exception           Error
+	      |    (checked)        (unchecked)
+	      |
+	RuntimeException
+	  (unchecked)
+
+There are three main categories of exceptional condition:
+
+	1) Checked exceptions 
+	2) Unchecked exceptions / Runtime exceptions
+	3) Errors
+
+
+Checked Exceptions :
+
+ 	- checked by the compiler at compilation time 
+	- needs to be thrown to the call stack or handled by ourselves
+	
+	- Examples : SQLException, IOException, ClassNotFoundException, FileNotFoundException etc.
+
+Unchecked Exceptions :
+
+	- internal to the application
+		- application cannot anticipate or recover from
+	
+	- these usually indicate programming bugs, such as logic errors or improper use of an API.
+	- better to FIX those bugs instead of catching 
+
+	- Examples : ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException etc.
+
+
+Errors:
+
+	- external to the application
+		-application cannot anticipate or recover from
+	
+	- serious and usually irrevocable conditions incompatibility, infinite recursion, or memory leaks.
+	
+	- Examples : StackOverflowError and OutOfMemoryError.
+
+Guideline : 
+
+	1) Generally speaking, do not throw a RuntimeException or create a subclass of RuntimeException simply because you don't want to be bothered with specifying the exceptions your methods can throw.
+	
+	2) If a client can reasonably be expected to recover from an exception, make it a checked exception. If a client cannot do anything to recover from the exception, make it an unchecked exception.
+
+
+Catching and Handling Exceptions
+
+	- realizable via 
+
+		1) try - catch - finally 
+
+		2) try - with - resources 
+
+Try - Block 
+
+	structure :	
+	
+		try {
+	
+       	   //code that could throw an exception 
+
+		}	
+
+Catch - Block 
+
+	structure :
+	
+		try {
+
+		} catch( ExceptionType name) {
+
+		} catch( ExceptionType name) {
+
+		} catch ( ExceptionType | ExceptionType name // valid too !
+
+
+	- is an exception handler 
+
+	- contains code that is executed if/when exception handler is invoked 
+
+	 
+	Exception handlers can do more than just print error messages or halt the program. They can do error recovery, prompt the user to make a decision, or propagate the error up to a higher-level handler using chained exceptions
+
+
+
+Finally - Block 
+
+	structure :
+	
+		try {
+
+			//Statements that may cause an exception
+
+		} catch( ExceptionType name) {
+			
+			//Handling exception
+
+		}finally{
+
+			//Statements to be executed
+		
+		}
+
+	- always executes when the try block exits
+	- is executed even if an unexpected exception occurs
+
+	- The circumstances that prevent execution of the code in a finally block are:
+		1) The death of a Thread
+		2) Using of the System.exit() method.
+		3) Due to an exception arising in the finally block.
+	
+
+
+Try-with-resources Statement
+
+
+
+
+
+
+
+
+
+
+
+
+
