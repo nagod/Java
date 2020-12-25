@@ -1,4 +1,10 @@
-/*p0, percent, aug (inhabitants coming or leaving each year), p (population to surpass)
+package practice;
+
+import java.util.*;
+
+public class prac2 {
+
+    /*p0, percent, aug (inhabitants coming or leaving each year), p (population to surpass)
       the function nb_year should return n number of entire years needed to get a population greater or equal to p.
       aug is an integer, percent a positive or null number, p0 and p are positive integers (> 0)
 
@@ -92,8 +98,8 @@
         }
     }
     /*
-    * Write function avg which calculates average of numbers in given list.
-    * */
+     * Write function avg which calculates average of numbers in given list.
+     * */
 
     public static double find_average(int[] array){
         int sum = 0;
@@ -108,3 +114,47 @@
     For example:
     [1, 2, 3] --> [2, 4, 6]
     */
+
+    public static int[] doubleEntry(int[] arr){
+        return Arrays.stream(arr).map(x -> x*2).toArray();
+    }
+
+    /*
+    Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+     */
+    public static boolean solution(String str, String ending) {
+        return str.length() >= ending.length() && str.substring(str.length() - ending.length(), str.length()).contentEquals(ending);
+
+    }
+    public  static boolean ssolution(String str, String ending){
+        return str.endsWith(ending);
+    }
+    /*
+    Given an integral number, determine if it's a square number:
+     */
+    public static boolean isSquare(int n) {
+        return n >=0  && ((int)Math.sqrt(n) *(int)Math.sqrt(n) == n);
+        //or  Math.sqrt(n) % 1 == 0
+    }
+
+    /*
+    Given an array of integers, find the one that appears an odd number of times.
+    There will always be only one integer that appears an odd number of times
+     */
+    public static int findIt(int[] array) {
+        int odd = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int key : array) {
+            if (!map.containsKey(key)) {
+                map.put(key, 1);
+            } else {
+                map.put(key, map.get(key) + 1);
+            }
+        }
+        for(Map.Entry<Integer, Integer> kap :map.entrySet()){
+            if(kap.getValue() % 2 != 0 ) odd = kap.getKey() ;}
+        return odd;
+    }
+    public static void main(String[] args) {
+    }
+}
