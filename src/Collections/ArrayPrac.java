@@ -29,8 +29,21 @@ public class ArrayPrac {
             System.out.println(n);
         }
         // Printing with Arrays from java.util.Arrays
+        // type : String
         System.out.println(Arrays.toString(integerArray));
+        System.out.println(Arrays.toString(string));
 
+        // Clone an Array
+        String [] clonedArray = string.clone();
+        String [] clonedArray2 = Arrays.copyOf(string, string.length);
+
+        for(String s: clonedArray){
+            System.out.println(s);
+        }
+
+        for(String s: clonedArray2){
+            System.out.println(s);
+        }
 
 
     }
